@@ -411,6 +411,10 @@ def read_dataset_page(_id, _format):
     if not _format:
         _format = check_access_header()
 
+    import logging
+    LOG = logging.getLogger(__name__)
+    LOG.info(f"BOINK: read_dataset_page for {_format} ...")
+
     if not _format:
         if toolkit.check_ckan_version(max_version='2.8.99'):
             return read_endpoint(_id)

@@ -20,6 +20,9 @@ def read_catalog(_format=None, package_type=None):
 
 
 def read_dataset(_id, _format=None, package_type=None):
+    import logging
+    LOG = logging.getLogger(__name__)
+    LOG.info(f"BOINK: We should get here ...")
     return utils.read_dataset_page(_id, _format)
 
 if toolkit.asbool(config.get(utils.ENABLE_RDF_ENDPOINTS_CONFIG, True)):
